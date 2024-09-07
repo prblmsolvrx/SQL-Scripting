@@ -1,0 +1,41 @@
+-- TODO: Write an SQL query to select all columns from the Seasons table.
+SELECT * FROM Seasons;
+
+-- TODO: Write a query to list all the tables in the database
+SHOW TABLES;
+
+/*
++-----------+--------+--------------+
+| season_id | season | trophies_won |
++-----------+--------+--------------+
+|         1 | 04/05  |            1 |
+|         2 | 05/06  |            2 |
+|         3 | 06/07  |            0 |
+|         4 | 07/08  |            0 |
+|         5 | 08/09  |            3 |
+|         6 | 09/10  |            2 |
+|         7 | 10/11  |            3 |
+|         8 | 11/12  |            4 |
+|         9 | 12/13  |            1 |
+|        10 | 13/14  |            0 |
+|        11 | 14/15  |            3 |
+|        12 | 15/16  |            2 |
+|        13 | 16/17  |            1 |
+|        14 | 17/18  |            1 |
+|        15 | 18/19  |            1 |
+|        16 | 19/20  |            0 |
+|        17 | 20/21  |            1 |
+|        18 | 21/22  |            2 |
+|        19 | 22/23  |            1 |
++-----------+--------+--------------+
++-----------------------+
+| Tables_in_practice_db |
++-----------------------+
+| clubs                 |
+| competitions          |
+| matches               |
+| matchevents           |
+| players               |
+| seasons               |
++-----------------------+
+*/

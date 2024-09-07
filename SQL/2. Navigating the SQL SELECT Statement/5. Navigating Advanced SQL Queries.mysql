@@ -1,0 +1,36 @@
+/*
+write an SQL query to retrieve the columns season, and trophies_won
+from the Seasons table. Additionally, rename these columns to Season
+and Trophies Won.
+*/
+
+-- TODO: Fetch season, and trophies_won from the Seasons table, and rename them to Season and Trophies Won.
+
+SELECT season AS Season , trophies_won AS "Trophies Won"
+FROM Seasons
+
+/*
++--------+--------------+
+| Season | Trophies Won |
++--------+--------------+
+| 04/05  |            1 |
+| 05/06  |            2 |
+| 06/07  |            0 |
+| 07/08  |            0 |
+| 08/09  |            3 |
+| 09/10  |            2 |
+| 10/11  |            3 |
+| 11/12  |            4 |
+| 12/13  |            1 |
+| 13/14  |            0 |
+| 14/15  |            3 |
+| 15/16  |            2 |
+| 16/17  |            1 |
+| 17/18  |            1 |
+| 18/19  |            1 |
+| 19/20  |            0 |
+| 20/21  |            1 |
+| 21/22  |            2 |
+| 22/23  |            1 |
++--------+--------------+
+*/

@@ -1,0 +1,32 @@
+/*
+particularly the BETWEEN operator. We are going to write a query to retrieve events
+from the MatchEvents table where the event occurred between the 30th and 45th minutes (inclusive).
+
+Below is the MatchEvents table:
+
+event_id	match_id	playing_position	minute	at_score	event_type	goal_assist_id
+1	1	CF	90+1	2:00	Left-footed shot	1
+2	2	RW	34	3:00	Left-footed shot	NULL
+event_id: Unique identifier for each event.
+match_id: Reference to the match in which the event occurred.
+playing_position: Messi's playing position during the event (e.g., "CF").
+minute: Minute of the match when the event occurred.
+at_score: Score at the time of the event.
+event_type: Type of event (e.g., "Left-footed shot").
+goal_assist_id: Reference to the player who assisted the goal, if any.
+*/
+
+-- TODO: Fetch events occurring between 30th and 45th minute
+SELECT * FROM MatchEvents
+WHERE minute BETWEEN 30 AND 45;
+
+/*
++----------+----------+------------------+--------+----------+--------------------+----------------+
+| event_id | match_id | playing_position | minute | at_score | event_type         | goal_assist_id |
++----------+----------+------------------+--------+----------+--------------------+----------------+
+|        2 |        2 | RW               | 34     | 3:0      | Left-footed shot   |           NULL |
+|        8 |        8 | CF               | 42     | 1:0      | Header             |              5 |
+|       11 |       11 | RW               | 36     | 3:0      | Left-footed shot   |              2 |
+|       18 |       18 | RW               | 45     | 1:0      | Left-footed shot   |              1 |
+|       20 |       20 | RW               | 45     | 3:0      | Left-footed shot   |              7 |
+*/

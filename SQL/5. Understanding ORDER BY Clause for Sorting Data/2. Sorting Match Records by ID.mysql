@@ -1,0 +1,24 @@
+"""
+make use of the SELECT, FROM, and ORDER BY clauses we've learned in previous lessons.
+"""
+
+-- TODO: Select match ID and date ordered by date in ascending order
+SELECT match_id, date
+FROM Matches
+ORDER BY date ASC;
+
+/*
++----------+------------+
+| match_id | date       |
++----------+------------+
+|        1 | 2005-05-01 |
+|        2 | 2005-11-02 |
+|        3 | 2005-11-27 |
+|        4 | 2006-01-15 |
+|        5 | 2006-01-22 |
+|        6 | 2006-01-29 |
+|        7 | 2006-01-29 |
+|        8 | 2006-02-01 |
+|        9 | 2006-02-18 |
+|       10 | 2006-08-28 |
+*/

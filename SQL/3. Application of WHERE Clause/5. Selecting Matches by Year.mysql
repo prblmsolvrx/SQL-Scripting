@@ -1,0 +1,28 @@
+/*
+TODO: Write an SQL query to select all match dates and results played
+in the year 2012 and rename "date" column to "Date" and the "result"
+column to "Match Score" in your output. Hint: Enclose column name
+ with spaces in double quotes ("").
+*/
+SELECT 
+    date AS "Date", 
+    result AS "Match Score"
+FROM 
+    matches
+WHERE 
+    YEAR(date) = 2012;
+
+/*
++------------+-------------+
+| Date       | Match Score |
++------------+-------------+
+| 2012-01-04 | 4:0         |
+| 2012-01-04 | 4:0         |
+| 2012-01-15 | 4:2         |
+| 2012-01-15 | 4:2         |
+| 2012-01-22 | 1:4         |
+| 2012-01-22 | 1:4         |
+| 2012-01-22 | 1:4         |
+| 2012-02-04 | 2:1         |
+| 2012-02-14 | 1:3         |
+*/

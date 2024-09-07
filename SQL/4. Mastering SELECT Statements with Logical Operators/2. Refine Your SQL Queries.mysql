@@ -1,0 +1,18 @@
+/*
+ Matches table, you need to select matches that were played at the home venue (venue = 'H')
+ and have a result of 5:0. Modify the given query to accommodate this.
+*/
+
+-- TODO: Fill in the blank to complete the query. Hint: Use the column `result`.
+SELECT * FROM Matches WHERE venue = 'H' AND result = "5:0";
+
+/*
++----------+-----------+----------------+----------------+------------+-------+---------+-------------+--------+
+| match_id | season_id | competition_id | matchday       | date       | venue | club_id | opponent_id | result |
++----------+-----------+----------------+----------------+------------+-------+---------+-------------+--------+
+|        2 |         2 |              2 | Group Stage    | 2005-11-02 | H     |       1 |           2 | 5:0    |
+|       63 |         5 |              1 | 19             | 2009-01-17 | H     |       1 |           2 | 5:0    |
+|       91 |         6 |              3 | 5th round      | 2009-11-10 | H     |       1 |           2 | 5:0    |
+|      140 |         7 |              1 | 9              | 2010-10-30 | H     |       1 |           2 | 5:0    |
+|      141 |         7 |              1 | 9              | 2010-10-30 | H     |       1 |           2 | 5:0    |
+*/

@@ -1,0 +1,14 @@
+SHOW TABLES;
+
+/*
++-----------------------+
+| Tables_in_practice_db |
++-----------------------+
+| clubs                 |
+| competitions          |
+| matches               |
+| matchevents           |
+| players               |
+| seasons               |
++-----------------------+
+*/

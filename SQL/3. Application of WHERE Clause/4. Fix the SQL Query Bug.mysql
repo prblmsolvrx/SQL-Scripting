@@ -1,0 +1,22 @@
+/*
+identifying and fixing a bug 
+retrieve all matches from the Matches table played after the year 2005.'
+However, there's a mistake in the statement, and it is not executing correctly. 
+our task is to find and fix the error.
+*/
+
+-- TODO: Select all matches played after the year 2005
+SELECT * 
+FROM Matches
+WHERE YEAR(date) > 2005;
+
+/*
++----------+-----------+----------------+----------------+------------+-------+---------+-------------+--------+
+| match_id | season_id | competition_id | matchday       | date       | venue | club_id | opponent_id | result |
++----------+-----------+----------------+----------------+------------+-------+---------+-------------+--------+
+|        4 |         2 |              1 | 19             | 2006-01-15 | H     |       1 |           2 | 2:1    |
+|        5 |         2 |              1 | 20             | 2006-01-22 | H     |       1 |           2 | 2:0    |
+|        6 |         2 |              1 | 21             | 2006-01-29 | A     |       1 |           2 | 0:3    |
+|        7 |         2 |              1 | 21             | 2006-01-29 | A     |       1 |           2 | 0:3    |
+|        8 |         2 |              3 | Quarter-Finals | 2006-02-01 | H     |       1 |           2 | 2:1    |
+*/

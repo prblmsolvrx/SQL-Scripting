@@ -1,0 +1,32 @@
+/*
+Write a SELECT query to retrieve matches from the Matches table where Lionel Messi played a match during year 2019 or 2020, on matchdays between 1 and 15, and where the result was either a win with a score of '4:1' or '5:2'. Use the IN, BETWEEN, and OR operators in your query, and remember to group conditions for clarity.
+
+Here’s a skeleton to help you get started:
+
+SQL
+Copy
+SELECT * FROM Matches
+WHERE (condition1)
+      AND (condition2)
+      AND (condition3);
+*/
+
+
+-- TODO: Fetch matches from year 2019 or 2020, on matchdays between 1 and 15, where the result was either 4:1 or 5:2
+
+SELECT * FROM Matches
+WHERE YEAR(date) IN (2019, 2020)
+      AND matchday BETWEEN 1 AND 15
+      AND (result = '4:1' OR result = '5:2');
+
+/*
++----------+-----------+----------------+----------+------------+-------+---------+-------------+--------+
+| match_id | season_id | competition_id | matchday | date       | venue | club_id | opponent_id | result |
++----------+-----------+----------------+----------+------------+-------+---------+-------------+--------+
+|      610 |        16 |              1 | 13       | 2019-11-09 | H     |       1 |           2 | 4:1    |
+|      611 |        16 |              1 | 13       | 2019-11-09 | H     |       1 |           2 | 4:1    |
+|      612 |        16 |              1 | 13       | 2019-11-09 | H     |       1 |           2 | 4:1    |
+|      639 |        17 |              1 | 9        | 2020-11-07 | H     |       1 |           2 | 5:2    |
+|      640 |        17 |              1 | 9        | 2020-11-07 | H     |       1 |           2 | 5:2    |
++----------+-----------+----------------+----------+------------+-------+---------+-------------+--------+
+*/

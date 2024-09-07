@@ -1,0 +1,16 @@
+/*
+fetching club_country and club_name, in that specific order,
+for all clubs from the Clubs table.
+*/
+
+SELECT club_country AS "Club Country", club_name AS Name
+FROM Clubs;
+
+/*
++--------------+---------------------+
+| Club Country | Name                |
++--------------+---------------------+
+| Spain        | FC Barcelona        |
+| France       | Paris Saint-Germain |
++--------------+---------------------+
+*/

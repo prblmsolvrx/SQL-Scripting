@@ -1,0 +1,25 @@
+"""
+ task at hand involves fetching the matches and the dates of all
+ Lionel Messi's matches played after the year 2005, sorted in
+ ascending order by match dates. This requires a slight modification
+ in the existing code, wherein you must replace the ______ placeholder
+ with the appropriate content.
+"""
+
+SELECT match_id, date 
+FROM Matches 
+WHERE YEAR(date) > 2005
+ORDER BY date ASC;
+
+/*
++----------+------------+
+| match_id | date       |
++----------+------------+
+|        4 | 2006-01-15 |
+|        5 | 2006-01-22 |
+|        6 | 2006-01-29 |
+|        7 | 2006-01-29 |
+|        8 | 2006-02-01 |
+|        9 | 2006-02-18 |
+|       10 | 2006-08-28 |
+*/

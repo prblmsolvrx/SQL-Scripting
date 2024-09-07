@@ -1,0 +1,21 @@
+"""
+writing an SQL query from scratch using your knowledge of the SELECT, FROM, and ORDER BY clauses.
+This task requires you to write a complete SQL query that retrieves match_id, date, and result
+from the Matches table and orders the results by date in descending order.
+"""
+
+-- TODO: Write an SQL query to select match ID, date, and result ordered by date in descending order
+SELECT match_id, date , result
+FROM Matches 
+ORDER BY date DESC
+
+/*
++----------+------------+--------+
+| match_id | date       | result |
++----------+------------+--------+
+|      704 | 2023-03-04 | 4:2    |
+|      703 | 2023-02-26 | 0:3    |
+|      702 | 2023-02-19 | 4:3    |
+|      701 | 2023-02-04 | 2:1    |
+|      700 | 2023-02-01 | 1:3    |
+*/

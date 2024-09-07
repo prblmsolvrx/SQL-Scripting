@@ -1,0 +1,15 @@
+"""
+ Modify the given SQL query to fetch the club_name and club_country columns
+ from the Clubs table and give them aliases Name and Club Country, respectively.
+"""
+-- TODO: Select club_name and club_country with aliases
+SELECT club_name AS "Name", club_country AS "Club Country" FROM Clubs;
+
+/*
++---------------------+--------------+
+| Name                | Club Country |
++---------------------+--------------+
+| FC Barcelona        | Spain        |
+| Paris Saint-Germain | France       |
++---------------------+--------------+
+*/

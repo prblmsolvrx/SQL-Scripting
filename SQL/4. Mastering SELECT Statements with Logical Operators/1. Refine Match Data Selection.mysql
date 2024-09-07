@@ -1,0 +1,17 @@
+/*
+run the provided SQL query, which retrieves all matches
+from the Matches table where the competition_id is greater
+than 1 and the date is earlier than '2006-01-01'.
+Execute the SQL command to see the results.
+*/
+
+-- TODO: Fetch matches with specific conditions 
+SELECT * FROM Matches WHERE competition_id > 1 AND date < '2006-01-01';
+
+/*
++----------+-----------+----------------+-------------+------------+-------+---------+-------------+--------+
+| match_id | season_id | competition_id | matchday    | date       | venue | club_id | opponent_id | result |
++----------+-----------+----------------+-------------+------------+-------+---------+-------------+--------+
+|        2 |         2 |              2 | Group Stage | 2005-11-02 | H     |       1 |           2 | 5:0    |
++----------+-----------+----------------+-------------+------------+-------+---------+-------------+--------+
+*/

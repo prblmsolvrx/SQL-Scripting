@@ -1,0 +1,16 @@
+/*
+modify the given SQL query to fetch club_id and club_name
+from the Clubs table instead of fetching all columns.
+*/
+
+-- TODO: Select all columns from the Clubs table
+SELECT club_id, club_name FROM Clubs;
+
+/*
++---------+---------------------+
+| club_id | club_name           |
++---------+---------------------+
+|       1 | FC Barcelona        |
+|       2 | Paris Saint-Germain |
++---------+---------------------+
+*/
