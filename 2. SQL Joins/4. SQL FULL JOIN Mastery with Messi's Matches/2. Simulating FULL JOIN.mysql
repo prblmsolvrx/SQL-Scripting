@@ -1,0 +1,40 @@
+"""
+craft an SQL command to retrieve the match date and the match event type
+from the Matches and MatchEvents tables, respectively, while ensuring
+connectivity based on the match_id using a FULL JOIN. As MySQL does not
+support FULL JOIN directly, you will use a combination of LEFT JOIN and
+RIGHT JOIN (include records that do not have matches in either table)
+and merge the results using UNION.
+Please fill in the blanks in the provided starter code by inputting
+the correct column names and join types to parallel what you've learned.
+Your focus is to simulate a FULL JOIN to ensure no data is missed out. Let's get started!
+"""
+
+-- TODO: Fetch match date and match event from Matches and MatchEvents tables
+SELECT Matches.date, MatchEvents.event_type
+FROM Matches
+LEFT JOIN MatchEvents 
+ON Matches.match_id = MatchEvents.match_id
+
+UNION
+
+SELECT Matches.date, MatchEvents.event_type
+FROM Matches
+RIGHT JOIN MatchEvents 
+ON Matches.match_id = MatchEvents.match_id;
+
+/*
++------------+------------------------+
+| date       | event_type             |
++------------+------------------------+
+| 2005-05-01 | Left-footed shot       |
+| 2005-11-02 | Left-footed shot       |
+| 2005-11-27 | Left-footed shot       |
+| 2006-01-15 | Left-footed shot       |
+| 2006-01-22 | Left-footed shot       |
+| 2006-01-29 | Right-footed shot      |
+| 2006-01-29 | Left-footed shot       |
+| 2006-02-01 | Header                 |
+| 2006-02-18 | Left-footed shot       |
+| 2006-08-28 | Left-footed shot       |
+*/

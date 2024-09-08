@@ -1,0 +1,26 @@
+"""
+ modify the given query to display match dates and events for matches played after the year 2005.
+"""
+
+-- TODO: Filter matches to display those played after the year 2005
+SELECT Matches.date, MatchEvents.event_type 
+FROM Matches 
+INNER JOIN MatchEvents 
+ON Matches.match_id = MatchEvents.match_id
+WHERE YEAR(Matches.date) > 2005;
+
+"""
++------------+------------------------+
+| date       | event_type             |
++------------+------------------------+
+| 2006-01-15 | Left-footed shot       |
+| 2006-01-22 | Left-footed shot       |
+| 2006-01-29 | Right-footed shot      |
+| 2006-01-29 | Left-footed shot       |
+| 2006-02-01 | Header                 |
+| 2006-02-18 | Left-footed shot       |
+| 2006-08-28 | Left-footed shot       |
+| 2006-09-09 | Left-footed shot       |
+| 2006-09-27 | Left-footed shot       |
+| 2006-10-15 | Right-footed shot      |
+"""

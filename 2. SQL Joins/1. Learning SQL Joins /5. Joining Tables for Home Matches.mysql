@@ -1,0 +1,38 @@
+"""
+ SQL query that retrieves all matches Messi played at home,
+ displaying the match ID, date, result, and opponent club's name.
+ The results should be sorted by the match date.
+"""
+
+SELECT
+    m.match_id,
+    m.date,
+    m.result,
+    c.club_name AS opponent
+FROM
+    Matches m
+JOIN
+    Clubs c
+ON
+    m.opponent_id = c.club_id
+WHERE
+    m.venue = 'H'
+ORDER BY
+    m.date;
+
+"""
++----------+------------+--------+---------------------+
+| match_id | date       | result | opponent            |
++----------+------------+--------+---------------------+
+|        1 | 2005-05-01 | 2:0    | Paris Saint-Germain |
+|        2 | 2005-11-02 | 5:0    | Paris Saint-Germain |
+|        3 | 2005-11-27 | 4:1    | Paris Saint-Germain |
+|        4 | 2006-01-15 | 2:1    | Paris Saint-Germain |
+|        5 | 2006-01-22 | 2:0    | Paris Saint-Germain |
+|        8 | 2006-02-01 | 2:1    | Paris Saint-Germain |
+|        9 | 2006-02-18 | 5:1    | Paris Saint-Germain |
+|       11 | 2006-09-09 | 3:0    | Paris Saint-Germain |
+|       13 | 2006-10-15 | 3:1    | Paris Saint-Germain |
+|       16 | 2007-03-10 | 3:3    | Paris Saint-Germain |
+|       15 | 2007-03-10 | 3:3    | Paris Saint-Germain |
+"""

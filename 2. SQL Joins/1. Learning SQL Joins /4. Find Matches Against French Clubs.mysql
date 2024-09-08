@@ -1,0 +1,27 @@
+"""
+ write a query to find all matches against clubs from France.
+ Modify the SQL query to retrieve matches where the opponent
+ club's country (club_country) is France.
+"""
+
+SELECT Matches.match_id, Matches.date, Matches.result, Clubs.club_name AS Opponent
+FROM Matches
+JOIN Clubs ON Matches.opponent_id = Clubs.club_id
+WHERE Clubs.club_country = "France"
+ORDER BY Matches.date;
+
+"""
++----------+------------+--------+---------------------+
+| match_id | date       | result | Opponent            |
++----------+------------+--------+---------------------+
+|        1 | 2005-05-01 | 2:0    | Paris Saint-Germain |
+|        2 | 2005-11-02 | 5:0    | Paris Saint-Germain |
+|        3 | 2005-11-27 | 4:1    | Paris Saint-Germain |
+|        4 | 2006-01-15 | 2:1    | Paris Saint-Germain |
+|        5 | 2006-01-22 | 2:0    | Paris Saint-Germain |
+|        6 | 2006-01-29 | 0:3    | Paris Saint-Germain |
+|        7 | 2006-01-29 | 0:3    | Paris Saint-Germain |
+|        8 | 2006-02-01 | 2:1    | Paris Saint-Germain |
+|        9 | 2006-02-18 | 5:1    | Paris Saint-Germain |
+|       10 | 2006-08-28 | 2:3    | Paris Saint-Germain |
+"""

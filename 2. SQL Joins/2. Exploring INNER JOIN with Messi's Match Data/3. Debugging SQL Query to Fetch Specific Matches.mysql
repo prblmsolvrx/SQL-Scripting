@@ -1,0 +1,32 @@
+"""
+ a SQL query to retrieve all match dates and events after the year 2005.
+ The provided SQL code has an error preventing it from running correctly.
+ Identify and correct the mistake to complete the task successfully.
+"""
+
+-- TODO: Complete the INNER JOIN clause with the MatchEvents table
+SELECT Matches.date, MatchEvents.event_type 
+FROM Matches 
+INNER JOIN MatchEvents
+ON Matches.match_id = MatchEvents.match_id
+WHERE YEAR(Matches.date) > 2005;
+
+
+"""
++------------+------------------------+
+| date       | event_type             |
++------------+------------------------+
+| 2006-01-15 | Left-footed shot       |
+| 2006-01-22 | Left-footed shot       |
+| 2006-01-29 | Right-footed shot      |
+| 2006-01-29 | Left-footed shot       |
+| 2006-02-01 | Header                 |
+| 2006-02-18 | Left-footed shot       |
+| 2006-08-28 | Left-footed shot       |
+| 2006-09-09 | Left-footed shot       |
+| 2006-09-27 | Left-footed shot       |
+| 2006-10-15 | Right-footed shot      |
+| 2007-03-10 | Left-footed shot       |
+| 2007-03-10 | Left-footed shot       |
+| 2007-03-10 | Left-footed shot       |
+"""

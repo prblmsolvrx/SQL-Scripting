@@ -1,0 +1,26 @@
+"""
+add a condition so that we only get matches with matchday equal to 34.
+"""
+
+SELECT Matches.match_id, Matches.date, Matches.result, Clubs.club_name AS Opponent
+FROM Matches
+JOIN Clubs ON Matches.opponent_id = Clubs.club_id
+WHERE Matches.venue = 'H' AND Matches.matchday = 34
+ORDER BY Matches.date;
+
+"""
++----------+------------+--------+---------------------+
+| match_id | date       | result | Opponent            |
++----------+------------+--------+---------------------+
+|        1 | 2005-05-01 | 2:0    | Paris Saint-Germain |
+|      312 | 2013-05-05 | 4:2    | Paris Saint-Germain |
+|      313 | 2013-05-05 | 4:2    | Paris Saint-Germain |
+|      352 | 2014-04-20 | 2:1    | Paris Saint-Germain |
+|      402 | 2015-04-28 | 6:0    | Paris Saint-Germain |
+|      403 | 2015-04-28 | 6:0    | Paris Saint-Germain |
+|      501 | 2017-04-26 | 7:1    | Paris Saint-Germain |
+|      502 | 2017-04-26 | 7:1    | Paris Saint-Germain |
+|      552 | 2018-05-09 | 5:1    | Paris Saint-Germain |
+|      681 | 2022-04-23 | 1:1    | FC Barcelona        |
++----------+------------+--------+---------------------+
+"""

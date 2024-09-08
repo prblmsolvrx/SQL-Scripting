@@ -1,0 +1,26 @@
+"""
+retrieve data about matches from different seasons,
+including specific match events. The task will involve
+]joining multiple tables to acquire detailed information
+about each match and specific events that occurred during them.
+"""
+-- TODO: Retrieve all matches and their corresponding events
+SELECT Matches.match_id, MatchEvents.event_type
+FROM Matches 
+RIGHT JOIN MatchEvents ON Matches.match_id = MatchEvents.match_id;
+
+"""
++----------+------------------------+
+| match_id | event_type             |
++----------+------------------------+
+|        1 | Left-footed shot       |
+|        2 | Left-footed shot       |
+|        3 | Left-footed shot       |
+|        4 | Left-footed shot       |
+|        5 | Left-footed shot       |
+|        6 | Right-footed shot      |
+|        7 | Left-footed shot       |
+|        8 | Header                 |
+|        9 | Left-footed shot       |
+|       10 | Left-footed shot       |
+"""

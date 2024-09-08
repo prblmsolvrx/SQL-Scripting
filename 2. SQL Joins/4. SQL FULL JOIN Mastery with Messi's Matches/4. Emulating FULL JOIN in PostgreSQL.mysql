@@ -1,0 +1,34 @@
+-- TODO 1: Extract all matches alongside their events, using a LEFT JOIN to obtain all records from the Matches table whether there's an associated record in the MatchEvents table or not.
+
+-- TODO 2: Extract all match events and include matches without associated events. Implement a RIGHT JOIN to obtain all records from the MatchEvents table whether there's an associated record in the Matches table or not. Ensure you filter the dates to only include entries where the year is greater than 2005.
+
+-- TODO 3: Apply the UNION ALL clause to merge the findings of your previous tasks, ensuring a complete dataset that encompasses both associated and non-associated records from both tables.
+
+SELECT Matches.match_id, Matches.date, MatchEvents.event_type 
+FROM Matches 
+LEFT JOIN MatchEvents 
+ON Matches.match_id = MatchEvents.match_id
+
+UNION ALL
+
+SELECT Matches.match_id, Matches.date, MatchEvents.event_type 
+FROM Matches 
+RIGHT JOIN MatchEvents 
+ON Matches.match_id = MatchEvents.match_id
+WHERE Matches.match_id IS NULL;
+
+"""
++----------+------------+------------------------+
+| match_id | date       | event_type             |
++----------+------------+------------------------+
+|        1 | 2005-05-01 | Left-footed shot       |
+|        2 | 2005-11-02 | Left-footed shot       |
+|        3 | 2005-11-27 | Left-footed shot       |
+|        4 | 2006-01-15 | Left-footed shot       |
+|        5 | 2006-01-22 | Left-footed shot       |
+|        6 | 2006-01-29 | Right-footed shot      |
+|        7 | 2006-01-29 | Left-footed shot       |
+|        8 | 2006-02-01 | Header                 |
+|        9 | 2006-02-18 | Left-footed shot       |
+|       10 | 2006-08-28 | Left-footed shot       |
+"""

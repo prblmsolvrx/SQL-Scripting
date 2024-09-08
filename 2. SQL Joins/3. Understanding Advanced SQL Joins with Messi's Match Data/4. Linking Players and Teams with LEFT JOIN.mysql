@@ -1,0 +1,27 @@
+"""
+We will now work on a query to get all player names from the Matches table and link
+them up with their corresponding events from the MatchEvents table using a LEFT JOIN.
+"""
+
+-- Select Match date and Event from the Matches and MatchEvents tables respectively
+-- Undertake a left join on both tables based on match_id
+SELECT Matches.date, MatchEvents.event_type
+FROM Matches
+LEFT JOIN MatchEvents
+ON Matches.match_id = MatchEvents.match_id;
+
+"""
++------------+------------------------+
+| date       | event_type             |
++------------+------------------------+
+| 2005-05-01 | Left-footed shot       |
+| 2005-11-02 | Left-footed shot       |
+| 2005-11-27 | Left-footed shot       |
+| 2006-01-15 | Left-footed shot       |
+| 2006-01-22 | Left-footed shot       |
+| 2006-01-29 | Right-footed shot      |
+| 2006-01-29 | Left-footed shot       |
+| 2006-02-01 | Header                 |
+| 2006-02-18 | Left-footed shot       |
+| 2006-08-28 | Left-footed shot       |
+"""

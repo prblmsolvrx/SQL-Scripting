@@ -1,0 +1,35 @@
+"""
+Use the FULL JOIN clause to combine details with the teams they
+have been associated with, based on a common match_id.
+If there is no match found for a player in the Teams table, or
+for a team in the Matches table, the result should still show the
+details from the other table with null values for the unmatched records.
+"""
+-- TODO: Fetch all matches and events they have played for using FULL JOIN
+
+-- Left join to get all matches and player events (if any)
+SELECT 
+    m.match_id,
+    m.match_date,
+    m.team_1,
+    m.team_2,
+    p.player_name,
+    p.event
+FROM Matches m
+LEFT JOIN PlayerEvents p
+ON m.match_id = p.match_id
+
+UNION
+
+-- Right join to get all player events and their matches (if any), including those without matches
+SELECT 
+    m.match_id,
+    m.match_date,
+    m.team_1,
+    m.team_2,
+    p.player_name,
+    p.event
+FROM PlayerEvents p
+LEFT JOIN Matches m
+ON p.match_id = m.match_id
+ORDER BY match_id, player_name;

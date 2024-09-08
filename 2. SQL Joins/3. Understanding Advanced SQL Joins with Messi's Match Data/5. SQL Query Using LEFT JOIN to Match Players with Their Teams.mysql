@@ -1,0 +1,32 @@
+"""
+create a query to gather matches from the Matches table alongside
+the events from the MatchEvents table. We'll use a LEFT JOIN for this purpose.
+A RIGHT JOIN will bring all records from the left table, the Matches table in
+our scenario, and the matched rows from the MatchEvents table.
+"""
+
+SELECT 
+    M.date AS match_date, 
+    E.event_type
+FROM 
+    MatchEvents E
+RIGHT JOIN 
+    Matches M 
+ON 
+    M.match_id = E.match_id;
+
+"""
++------------+------------------------+
+| match_date | event_type             |
++------------+------------------------+
+| 2005-05-01 | Left-footed shot       |
+| 2005-11-02 | Left-footed shot       |
+| 2005-11-27 | Left-footed shot       |
+| 2006-01-15 | Left-footed shot       |
+| 2006-01-22 | Left-footed shot       |
+| 2006-01-29 | Right-footed shot      |
+| 2006-01-29 | Left-footed shot       |
+| 2006-02-01 | Header                 |
+| 2006-02-18 | Left-footed shot       |
+| 2006-08-28 | Left-footed shot       |
+"""

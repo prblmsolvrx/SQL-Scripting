@@ -1,0 +1,21 @@
+"""
+list all matches played at home and show their match ID, date, result, and the opponent club's name.
+"""
+
+SELECT Matches.match_id, Matches.date, Matches.result, Clubs.club_name AS Opponent
+FROM Matches
+JOIN Clubs ON Matches.opponent_id = Clubs.club_id
+WHERE Matches.venue = 'H'
+ORDER BY Matches.date;
+
+
+/*
++----------+------------+--------+---------------------+
+| match_id | date       | result | Opponent            |
++----------+------------+--------+---------------------+
+|        1 | 2005-05-01 | 2:0    | Paris Saint-Germain |
+|        2 | 2005-11-02 | 5:0    | Paris Saint-Germain |
+|        3 | 2005-11-27 | 4:1    | Paris Saint-Germain |
+|        4 | 2006-01-15 | 2:1    | Paris Saint-Germain |
+|        5 | 2006-01-22 | 2:0    | Paris Saint-Germain |
+*/

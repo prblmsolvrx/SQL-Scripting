@@ -1,0 +1,24 @@
+"""
+ add another component to our SQL toolkit: ordering our results.
+ Given the query that retrieves the match dates and events, we
+ want you to modify it so that the results are sorted
+ in descending order by Matches.date.
+"""
+
+-- TODO: Order the results by Matches.date in descending order
+SELECT Matches.date, MatchEvents.event_type 
+FROM Matches 
+INNER JOIN MatchEvents 
+ON Matches.match_id = MatchEvents.match_id
+ORDER BY Matches.date DESC 
+
+"""
++------------+------------------------+
+| date       | event_type             |
++------------+------------------------+
+| 2023-03-04 | Left-footed shot       |
+| 2023-02-26 | Right-footed shot      |
+| 2023-02-19 | Direct free kick       |
+| 2023-02-04 | Left-footed shot       |
+| 2023-02-01 | Left-footed shot       |
+"""
