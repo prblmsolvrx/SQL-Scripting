@@ -1,0 +1,13 @@
+"""
+Modify the provided SQL query to find out how many matches there are with season_id = 3.
+"""
+-- TODO: How many matches does a certain season have?
+SELECT COUNT(*) FROM Matches WHERE season_id = 3;
+
+"""
++----------+
+| COUNT(*) |
++----------+
+|       17 |
++----------+
+"""

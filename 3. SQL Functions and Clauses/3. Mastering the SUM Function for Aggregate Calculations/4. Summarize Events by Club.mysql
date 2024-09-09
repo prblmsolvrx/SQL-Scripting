@@ -1,0 +1,19 @@
+"""
+calculate the total number of events for each club using the SUM function.
+Your task is to fill in the missing parts to complete the query.
+"""
+
+-- TODO: Complete the SQL query to calculate total events for each club
+SELECT Matches.club_id, COUNT(MatchEvents.event_id) AS TotalEvents
+FROM Matches
+JOIN MatchEvents ON Matches.match_id = MatchEvents.match_id
+GROUP BY Matches.club_id;
+
+"""
++---------+-------------+
+| club_id | TotalEvents |
++---------+-------------+
+|       1 |         672 |
+|       2 |          32 |
++---------+-------------+
+"""

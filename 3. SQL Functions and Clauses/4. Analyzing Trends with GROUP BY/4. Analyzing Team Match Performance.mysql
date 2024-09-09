@@ -1,0 +1,32 @@
+"""
+write a complete SQL query. In this task, you are to write an SQL query
+that retrieves the match date and the total number of events (matches)
+for matches played after the year 2010, all grouped by each match's date.
+It should then order these results in descending order by the match date.
+
+-- TODO: Select all matches played after the year 2010 and count the total number of events for each match
+-- group by match date and order by match date in descending order
+"""
+
+
+SELECT m.date, COUNT(me.event_id) AS total_events
+FROM Matches m
+JOIN MatchEvents me ON m.match_id = me.match_id
+WHERE YEAR(m.date) > 2010
+GROUP BY m.date
+ORDER BY m.date DESC;
+
+"""
+| date       | total_events |
++------------+--------------+
+| 2023-03-04 |            1 |
+| 2023-02-26 |            1 |
+| 2023-02-19 |            1 |
+| 2023-02-04 |            1 |
+| 2023-02-01 |            1 |
+| 2023-01-11 |            1 |
+| 2022-10-29 |            1 |
+| 2022-10-25 |            2 |
+| 2022-10-21 |            1 |
+| 2022-10-05 |            1 |
+"""

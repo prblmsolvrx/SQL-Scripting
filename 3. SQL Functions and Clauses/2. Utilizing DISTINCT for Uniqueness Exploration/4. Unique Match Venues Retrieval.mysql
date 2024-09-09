@@ -1,0 +1,26 @@
+"""
+ retrieve all distinct seasons from a particular venue (away).
+ In our Lionel Messi's dataset, your task is to retrieve all
+ unique seasons belonging to venue = A. Please edit the given
+ starter query to accomplish this task.
+"""
+
+-- TODO: Fetch all unique seasons from a specific venue
+SELECT DISTINCT Matches.season_id
+FROM Matches
+WHERE Matches.venue = 'A';
+
+"""
++-----------+
+| season_id |
++-----------+
+|         2 |
+|         3 |
+|         4 |
+|         5 |
+|         6 |
+|         7 |
+|         8 |
+|         9 |
+|        10 |
+"""

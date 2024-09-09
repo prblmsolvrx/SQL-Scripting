@@ -1,0 +1,36 @@
+"""
+combine all the components to test your understanding of the SQL aggregate functions we have covered in
+our lessons. For our final exercise, we are going to write an SQL query
+that calculates both the total trophies won and average trophies won per season based
+on Lionel Messi's matches.
+Putting your skills to the test, write the complete SQL query in the SELECT form to perform the above.
+"""
+
+-- TODO: Write an SQL query to aggregate total trophies won and average trophies won per each season.
+
+SELECT
+    s.season_id AS Season,
+    SUM(s.trophies_won) AS total_trophies_won,
+    AVG(s.trophies_won) AS average_trophies_won
+FROM
+    Seasons s
+JOIN
+    Matches m ON s.season_id = m.season_id
+GROUP BY
+    s.season_id;
+
+"""
++--------+--------------------+----------------------+
+| Season | total_trophies_won | average_trophies_won |
++--------+--------------------+----------------------+
+|      1 |                  1 |               1.0000 |
+|      2 |                 16 |               2.0000 |
+|      3 |                  0 |               0.0000 |
+|      4 |                  0 |               0.0000 |
+|      5 |                114 |               3.0000 |
+|      6 |                 94 |               2.0000 |
+|      7 |                159 |               3.0000 |
+|      8 |                292 |               4.0000 |
+|      9 |                 60 |               1.0000 |
+|     10 |                  0 |               0.0000 |
+"""

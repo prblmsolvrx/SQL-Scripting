@@ -1,0 +1,33 @@
+"""
+Using the Seasons and Matches tables, write a SQL query that
+calculates the average trophies won in each season after 2010.
+Replace the _______ placeholders in the initial code with
+the correct SQL queries or field names.
+"""
+
+-- TODO: Aggregate average trophies won per each season after 2010
+SELECT Seasons.season_id, AVG(Seasons.trophies_won) AS AverageTrophiesWon
+FROM Seasons
+JOIN Matches ON Seasons.season_id = Matches.season_id
+WHERE YEAR(Matches.date) > 2010
+GROUP BY Seasons.season_id;
+
+"""
++-----------+--------------------+
+| season_id | AverageTrophiesWon |
++-----------+--------------------+
+|         7 |             3.0000 |
+|         8 |             4.0000 |
+|         9 |             1.0000 |
+|        10 |             0.0000 |
+|        11 |             3.0000 |
+|        12 |             2.0000 |
+|        13 |             1.0000 |
+|        14 |             1.0000 |
+|        15 |             1.0000 |
+|        16 |             0.0000 |
+|        17 |             1.0000 |
+|        18 |             2.0000 |
+|        19 |             1.0000 |
++-----------+--------------------+
+"""

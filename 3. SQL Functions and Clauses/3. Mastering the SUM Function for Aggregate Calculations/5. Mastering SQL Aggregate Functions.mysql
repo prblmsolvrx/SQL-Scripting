@@ -1,0 +1,35 @@
+-- TODO: Write a SQL query to calculate the total number of events for each season
+"""
+Write an SQL query to calculate the total number of
+events for each season using the SUM function.
+Your task is to write a complete SQL query to achieve this.
+"""
+
+SELECT 
+    m.season_id, 
+    SUM(1) AS total_events
+FROM 
+    Matches m
+JOIN 
+    MatchEvents me ON m.match_id = me.match_id
+GROUP BY 
+    m.season_id
+ORDER BY 
+    total_events DESC;
+
+"""
++-----------+--------------+
+| season_id | total_events |
++-----------+--------------+
+|         8 |           73 |
+|         9 |           60 |
+|        11 |           58 |
+|        13 |           54 |
+|         7 |           53 |
+|        15 |           51 |
+|         6 |           47 |
+|        14 |           45 |
+|        10 |           41 |
+|        12 |           41 |
+"""
+

@@ -1,0 +1,17 @@
+"""
+eplace the _______ placeholders with an aggregate function
+and the relevant field names to perform the addition of 
+all trophies won per season.
+"""
+
+-- TODO: Aggregate total trophies won per each season
+SELECT 
+    Seasons.season_id, 
+    SUM(Matches.trophies_won) AS total_trophies_won
+FROM 
+    Seasons
+JOIN 
+    Matches ON Seasons.season_id = Matches.season_id
+GROUP BY 
+    Seasons.season_id;
+

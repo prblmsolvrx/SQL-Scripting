@@ -1,0 +1,26 @@
+"""
+there seems to be an issue with the given SQL query.
+It is intended to fetch all the unique season_id entries
+from the Matches table, but it might not work as expected
+due to a typo. Your task is to find and fix this error in the query.
+"""
+
+-- Select all unique season IDs
+SELECT DISTINCT season_id
+FROM Matches
+
+"""
++-----------+
+| season_id |
++-----------+
+|         1 |
+|         2 |
+|         3 |
+|         4 |
+|         5 |
+|         6 |
+|         7 |
+|         8 |
+|         9 |
+|        10 |
+"""

@@ -1,0 +1,29 @@
+"""
+write a complete SQL query from scratch that involves the GROUP BY clause.
+First, you will select the season_id from the Matches table.
+Then, use the GROUP BY clause on season_id to find the
+total number of match_id for each season.
+"""
+
+-- TODO: Fetch the number of matches in each season
+
+SELECT season_id, COUNT(match_id) AS total_matches
+FROM Matches
+GROUP BY season_id;
+
+
+"""
++-----------+---------------+
+| season_id | total_matches |
++-----------+---------------+
+|         1 |             1 |
+|         2 |             8 |
+|         3 |            17 |
+|         4 |            16 |
+|         5 |            38 |
+|         6 |            47 |
+|         7 |            53 |
+|         8 |            73 |
+|         9 |            60 |
+|        10 |            41 |
+""'

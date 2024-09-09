@@ -1,0 +1,27 @@
+"""
+The SQL query contains some bugs and is not returning
+the expected results. Your task is to identify the issue
+and debug the query so that it works correctly.
+"""
+
+-- Incorrect SQL query with mistake
+SELECT Seasons.season_id, SUM(trophies_won) as TotalTrophiesWon
+FROM Seasons
+JOIN Matches ON Seasons.season_id = Matches.season_id
+GROUP BY Seasons.season_id;
+
+"""
++-----------+------------------+
+| season_id | TotalTrophiesWon |
++-----------+------------------+
+|         1 |                1 |
+|         2 |               16 |
+|         3 |                0 |
+|         4 |                0 |
+|         5 |              114 |
+|         6 |               94 |
+|         7 |              159 |
+|         8 |              292 |
+|         9 |               60 |
+|        10 |                0 |
+"""

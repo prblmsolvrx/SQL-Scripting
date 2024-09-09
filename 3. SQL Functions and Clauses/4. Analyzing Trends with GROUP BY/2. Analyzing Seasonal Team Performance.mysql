@@ -1,0 +1,26 @@
+"""
+retrieve the count of match_id from the Matches table, grouped by season_id. However,
+it seems a pesky bug has snuck into our SQL statement.
+The bug is preventing us from grouping the results by season_id. Your task is to fix the error.
+"""
+
+-- TODO: Get the count of match_id from Matches table for all seasons
+SELECT season_id, COUNT(match_id) AS NumberOfMatches
+FROM Matches
+GROUP BY season_id;
+
+"""
++-----------+-----------------+
+| season_id | NumberOfMatches |
++-----------+-----------------+
+|         1 |               1 |
+|         2 |               8 |
+|         3 |              17 |
+|         4 |              16 |
+|         5 |              38 |
+|         6 |              47 |
+|         7 |              53 |
+|         8 |              73 |
+|         9 |              60 |
+|        10 |              41 |
+"""

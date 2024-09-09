@@ -1,0 +1,24 @@
+"""
+apply the SUM function with an additional condition.
+Currently, the query calculates the total number of
+events for each season. Modify the query to calculate
+the total number of events only for the seasons in the
+years 2018 and 2019.
+"""
+
+-- TODO: Modify the query to calculate the total number of events only for the seasons in the years 2018 and 2019
+SELECT Matches.season_id, SUM(1) AS TotalEvents
+FROM Matches
+JOIN MatchEvents ON Matches.match_id = MatchEvents.match_id
+WHERE YEAR(Matches.date) IN (2018, 2019)
+GROUP BY Matches.season_id;
+
+"""
++-----------+-------------+
+| season_id | TotalEvents |
++-----------+-------------+
+|        14 |          26 |
+|        15 |          51 |
+|        16 |          15 |
++-----------+-------------+
+"""

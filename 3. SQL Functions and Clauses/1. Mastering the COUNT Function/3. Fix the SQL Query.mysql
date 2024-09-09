@@ -1,0 +1,10 @@
+-- TODO: Find and fix the issue to count the total number of matches in a specific season
+SELECT COUNT(season_id) FROM Matches WHERE season_id = 3;
+
+"""
++------------------+
+| COUNT(season_id) |
++------------------+
+|               17 |
++------------------+
+"""

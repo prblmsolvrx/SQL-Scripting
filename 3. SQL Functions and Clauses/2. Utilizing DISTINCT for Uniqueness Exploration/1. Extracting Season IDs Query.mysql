@@ -1,0 +1,21 @@
+/*
+extracting every season_id from the Matches table.
+This query will showcase the distribution of
+matches across various seasons.
+*/
+-- TODO: Select all seasons from Matches
+SELECT season_id
+FROM Matches;
+
+"""
++-----------+
+| season_id |
++-----------+
+|         1 |
+|         2 |
+|         2 |
+|         2 |
+|         2 |
+|         2 |
+|         2 |
+"""

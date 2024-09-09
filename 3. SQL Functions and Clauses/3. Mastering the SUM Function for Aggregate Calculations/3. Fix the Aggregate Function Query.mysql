@@ -1,0 +1,26 @@
+"""
+the query below is supposed to calculate the total number of events for each season,
+but it has a small error that needs to be fixed. Your task is to identify and fix
+the error in the provided SQL query.
+"""
+
+SELECT Matches.season_id, SUM(1) AS TotalEvents
+FROM Matches
+JOIN MatchEvents ON Matches.match_id = MatchEvents.match_id
+GROUP BY Matches.season_id;
+
+"""
++-----------+-------------+
+| season_id | TotalEvents |
++-----------+-------------+
+|         1 |           1 |
+|         2 |           8 |
+|         3 |          17 |
+|         4 |          16 |
+|         5 |          38 |
+|         6 |          47 |
+|         7 |          53 |
+|         8 |          73 |
+|         9 |          60 |
+|        10 |          41 |
+"""

@@ -1,0 +1,14 @@
+-- TODO: Select distinct seasons
+SELECT DISTINCT season_id
+FROM Matches;
+
+"""
++-----------+
+| season_id |
++-----------+
+|         1 |
+|         2 |
+|         3 |
+|         4 |
+|         5 |
+"""

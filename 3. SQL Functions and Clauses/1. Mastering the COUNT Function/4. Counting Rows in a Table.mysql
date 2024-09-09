@@ -1,0 +1,17 @@
+"""
+ We have been requested to determine how many matches there are in a specific competition 
+ rom the Matches table. For this task, determine the number of matches that exist in the
+ competition with a competition_id of 2.
+Complete the given statement by replacing the _______ placeholder with the correct ID.
+"""
+
+-- TODO: How many matches does a certain competition have?
+SELECT COUNT(*) FROM Matches WHERE competition_id = 2;
+
+"""
++----------+
+| COUNT(*) |
++----------+
+|      128 |
++----------+
+"""

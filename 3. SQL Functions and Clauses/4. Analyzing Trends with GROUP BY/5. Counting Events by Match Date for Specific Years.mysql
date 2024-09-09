@@ -1,0 +1,35 @@
+"""
+let's put everything we've learned together to write a complete SQL query.
+In this task, you are to write a SQL query that retrieves the match date
+and the total number of events (matches), all grouped by each match's date.
+The results should only include the years 2020 and 2021, and it should then
+order these results in descending order by the match date.
+"""
+
+"""
+-- TODO: Write an SQL query to retrieve the match date and the total number of events for each match played,
+-- only including the years 2020 and 2021, grouped by match date and ordered by match date in descending order.
+"""
+
+SELECT m.date, COUNT(me.event_id) AS total_events
+FROM Matches m
+JOIN MatchEvents me ON m.match_id = me.match_id
+WHERE YEAR(m.date) IN (2020, 2021)
+GROUP BY m.date
+ORDER BY m.date DESC;
+
+"""
++------------+--------------+
+| date       | total_events |
++------------+--------------+
+| 2021-12-07 |            2 |
+| 2021-11-20 |            1 |
+| 2021-10-19 |            2 |
+| 2021-09-28 |            1 |
+| 2021-05-16 |            1 |
+| 2021-05-11 |            1 |
+| 2021-05-02 |            2 |
+| 2021-04-29 |            1 |
+| 2021-04-22 |            2 |
+| 2021-04-17 |            2 |
+"""

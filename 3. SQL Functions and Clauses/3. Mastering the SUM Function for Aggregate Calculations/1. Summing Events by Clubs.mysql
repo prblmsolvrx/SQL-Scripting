@@ -1,0 +1,13 @@
+SELECT Matches.club_id, SUM(1) AS TotalEvents
+FROM Matches
+JOIN MatchEvents ON Matches.match_id = MatchEvents.match_id
+GROUP BY Matches.club_id;
+
+"""
++---------+-------------+
+| club_id | TotalEvents |
++---------+-------------+
+|       1 |         672 |
+|       2 |          32 |
++---------+-------------+
+"""

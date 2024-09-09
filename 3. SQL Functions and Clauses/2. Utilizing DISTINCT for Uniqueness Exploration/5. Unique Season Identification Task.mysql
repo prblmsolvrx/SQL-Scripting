@@ -1,0 +1,25 @@
+"""
+we'll write an SQL query to identify the unique season IDs from the Matches table.
+This will help us understand which unique seasons are recorded in the data.
+Write an SQL query to fetch all distinct season IDs from the Matches table.
+"""
+
+-- TODO: Write an SQL query to select all unique season IDs
+SELECT DISTINCT Matches.season_id
+FROM Matches
+
+"""
++-----------+
+| season_id |
++-----------+
+|         1 |
+|         2 |
+|         3 |
+|         4 |
+|         5 |
+|         6 |
+|         7 |
+|         8 |
+|         9 |
+|        10 |
+"""

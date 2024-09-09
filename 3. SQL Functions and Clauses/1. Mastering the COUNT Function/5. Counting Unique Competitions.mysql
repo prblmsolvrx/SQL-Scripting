@@ -1,0 +1,10 @@
+-- TODO: Write the SQL query to count all matches
+SELECT COUNT(*) FROM Matches
+
+"""
++----------+
+| COUNT(*) |
++----------+
+|      704 |
++----------+
+"""

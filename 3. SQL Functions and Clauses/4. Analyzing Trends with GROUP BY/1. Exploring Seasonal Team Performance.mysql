@@ -1,0 +1,25 @@
+"""
+amend the query by adding the missing GROUP BY clause to the season_id field.
+This modification will enable us to analyze the distribution of the number of
+matches across various seasons, showcasing the utility of the GROUP BY clause.
+"""
+-- TODO: Get the count of match_id from Matches table grouped by season_id
+SELECT season_id, COUNT(match_id) AS NumberOfMatches
+FROM Matches
+GROUP BY season_id
+
+"""
+ +-----------+-----------------+
+| season_id | NumberOfMatches |
++-----------+-----------------+
+|         1 |               1 |
+|         2 |               8 |
+|         3 |              17 |
+|         4 |              16 |
+|         5 |              38 |
+|         6 |              47 |
+|         7 |              53 |
+|         8 |              73 |
+|         9 |              60 |
+|        10 |              41 |
+"""
