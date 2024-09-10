@@ -1,0 +1,45 @@
+"""
+BY Using the CASE statement, write a SQL query that categorizes match
+Events based on the minute they occurred. Your task is to select match IDs
+(MatchID), event minutes (Minute), and categorize each event into one of
+three categories: 'Early', 'Middle', or 'Late'. The categorization should
+be based on the following conditions:
+If the event occurred before 30 minutes (me.minute < 30), label it as 'Early'.
+If the event occurred between 30 and 60 minutes (me.minute BETWEEN 30 AND 60),
+label it as 'Mid'.
+For events occurring after 60 minutes or exactly at 60 minutes (ELSE),
+label them as 'Late'.
+"""
+
+-- TODO: Categorize match events based on the minute they occurred
+
+SELECT 
+    m.match_id, 
+    e.Minute,
+    CASE 
+        WHEN e.Minute < 30 THEN 'Early'
+        WHEN e.Minute BETWEEN 30 AND 60 THEN 'Mid'
+        ELSE 'Late'
+    END AS EventCategory
+FROM 
+    MatchEvents e
+JOIN 
+    Matches m ON e.match_id = m.match_id;
+
+"""
++----------+--------+---------------+
+| match_id | Minute | EventCategory |
++----------+--------+---------------+
+|        1 | 90+1   | Late          |
+|        2 | 34     | Mid           |
+|        3 | 51     | Mid           |
+|        4 | 50     | Mid           |
+|        5 | 82     | Late          |
+|        6 | 75     | Late          |
+|        7 | 83     | Late          |
+|        8 | 42     | Mid           |
+|        9 | 84     | Late          |
+|       10 | 59     | Mid           |
+"""
+
+

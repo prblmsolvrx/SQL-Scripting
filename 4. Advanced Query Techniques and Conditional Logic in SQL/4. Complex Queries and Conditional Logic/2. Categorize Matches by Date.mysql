@@ -1,0 +1,29 @@
+"""
+complete an SQL query that selects the match ID, match date, and
+categorizes the match period based on the date. The criteria for
+categorization are as follows: if a match date is after 2015, label
+it as 'Recent Match'; otherwise, label it as 'Earlier Match'.
+"""
+
+SELECT
+    match_id AS MatchID,
+    date AS MatchDate,
+    IF(YEAR(date) > 2015 ,'Recent Match', 'Earlier Match') AS MatchPeriod
+FROM
+    Matches;
+
+"""
++---------+------------+---------------+
+| MatchID | MatchDate  | MatchPeriod   |
++---------+------------+---------------+
+|       1 | 2005-05-01 | Earlier Match |
+|       2 | 2005-11-02 | Earlier Match |
+|       3 | 2005-11-27 | Earlier Match |
+|       4 | 2006-01-15 | Earlier Match |
+|       5 | 2006-01-22 | Earlier Match |
+|       6 | 2006-01-29 | Earlier Match |
+|       7 | 2006-01-29 | Earlier Match |
+|       8 | 2006-02-01 | Earlier Match |
+|       9 | 2006-02-18 | Earlier Match |
+|      10 | 2006-08-28 | Earlier Match |
+"""

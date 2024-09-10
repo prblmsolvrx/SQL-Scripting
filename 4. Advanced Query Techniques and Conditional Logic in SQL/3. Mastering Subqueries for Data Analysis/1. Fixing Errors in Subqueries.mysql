@@ -1,0 +1,28 @@
+"""
+we'll focus on identifying an error in a provided SQL
+query and fixing it. The given query is intended to show
+matches where an event occurred later than the average
+minute of all events. However, it's not working as expected.
+Your task is to find and correct the error.
+"""
+
+-- TODO: Find and fix the issue in the code
+SELECT m.match_id AS MatchID, me.minute AS Minute, me.event_type AS EventType
+FROM Matches m
+INNER JOIN MatchEvents me ON m.match_id = me.match_id
+WHERE me.minute > (
+    SELECT AVG(minute)
+    FROM MatchEvents
+);
+
+"""
++---------+--------+------------------------+
+| MatchID | Minute | EventType              |
++---------+--------+------------------------+
+|       1 | 90+1   | Left-footed shot       |
+|       5 | 82     | Left-footed shot       |
+|       6 | 75     | Right-footed shot      |
+|       7 | 83     | Left-footed shot       |
+|       9 | 84     | Left-footed shot       |
+|      10 | 59     | Left-footed shot       |
+"""

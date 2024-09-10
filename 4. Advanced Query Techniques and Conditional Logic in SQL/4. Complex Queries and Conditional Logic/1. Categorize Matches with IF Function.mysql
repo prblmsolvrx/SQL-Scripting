@@ -1,0 +1,31 @@
+"""
+ a SQL query that attempts to use the IF function to
+ categorize matches from the Matches table into
+ 'Recent Match' and 'Earlier Match' periods based on their dates.
+ However, there is a minor error in the statement that is causing
+ it to malfunction. Your task is to find and fix this error.
+"""
+
+-- TODO: Find and fix the issue in the code
+SELECT
+    match_id AS MatchID,
+    date AS MatchDate,
+    IF(YEAR(date) > 2015, 'Recent Match', 'Earlier Match') AS MatchPeriod
+FROM
+    Matches;
+
+"""
++---------+------------+---------------+
+| MatchID | MatchDate  | MatchPeriod   |
++---------+------------+---------------+
+|       1 | 2005-05-01 | Earlier Match |
+|       2 | 2005-11-02 | Earlier Match |
+|       3 | 2005-11-27 | Earlier Match |
+|       4 | 2006-01-15 | Earlier Match |
+|       5 | 2006-01-22 | Earlier Match |
+|       6 | 2006-01-29 | Earlier Match |
+|       7 | 2006-01-29 | Earlier Match |
+|       8 | 2006-02-01 | Earlier Match |
+|       9 | 2006-02-18 | Earlier Match |
+|      10 | 2006-08-28 | Earlier Match |
+"""

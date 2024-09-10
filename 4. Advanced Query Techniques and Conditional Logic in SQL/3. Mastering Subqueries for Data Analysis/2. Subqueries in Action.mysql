@@ -1,0 +1,44 @@
+"""
+A subquery can be employed to make comparisons involving aggregate
+functions such as AVG, MAX, or MIN. Your task involves writing a
+query to fetch the names of matches where the event occurred later
+than the average minute of all events.
+
+Your job involves replacing the _______ placeholder in
+the given starter code with the correct field names or values.
+"""
+
+SELECT 
+    m.match_id AS MatchID, 
+    me.minute AS Minute, 
+    me.event_type AS EventType
+FROM 
+    Matches m
+INNER JOIN 
+    MatchEvents me ON m.match_id = me.match_id
+WHERE 
+    me.minute > (
+        SELECT 
+            AVG(minute)
+        FROM 
+            MatchEvents
+    );
+
+"""
+
++---------+--------+------------------------+
+| MatchID | Minute | EventType              |
++---------+--------+------------------------+
+|       1 | 90+1   | Left-footed shot       |
+|       5 | 82     | Left-footed shot       |
+|       6 | 75     | Right-footed shot      |
+|       7 | 83     | Left-footed shot       |
+|       9 | 84     | Left-footed shot       |
+|      10 | 59     | Left-footed shot       |
+|      12 | 89     | Left-footed shot       |
+|      13 | 80     | Right-footed shot      |
+|      16 | 90+1   | Left-footed shot       |
+|      17 | 86     | Left-footed shot       |
+|      22 | 80     | Left-footed shot       |
+
+"""

@@ -1,0 +1,21 @@
+"""
+ list all the names from the MatchEvents table that belong to
+ matches where minute is between 1 and 45. Parts of the SQL
+ query are missing in the given code. To complete this task,
+ replace the ________ placeholders in the starter code correctly
+ to execute the task.
+"""
+
+-- TODO: Use BETWEEN operator to choose events that occurred in the first half
+SELECT event_id, minute
+FROM MatchEvents
+WHERE minute BETWEEN 1 AND 45;
+
++----------+--------+
+| event_id | minute |
++----------+--------+
+|        2 | 34     |
+|        8 | 42     |
+|       11 | 36     |
+|       14 | 11     |
+|       15 | 28     |

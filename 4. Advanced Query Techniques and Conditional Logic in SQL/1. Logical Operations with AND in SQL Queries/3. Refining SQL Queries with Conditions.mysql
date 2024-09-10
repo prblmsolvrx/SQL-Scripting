@@ -1,0 +1,14 @@
+"""
+mastering the logical AND operator! Now, let's learn to use the OR operator.
+We want to modify the existing SQL query to retrieve matches from the
+Matches table. However, this time, we'll fetch matches that either
+have a result of 4:0 or are within the years of 2010 AND 2013.
+This approach gives us the flexibility to fetch records that satisfy
+either condition.
+Alter the given query to accomplish this.
+"""
+
+-- TODO: Fetch all matches with a specific result
+SELECT *
+FROM Matches
+WHERE result = '4:0' OR YEAR(date) BETWEEN 2010 AND 2013;

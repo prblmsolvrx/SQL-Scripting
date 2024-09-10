@@ -1,0 +1,27 @@
+"""
+the current query is not providing the correct results.
+Locate and correct the error.
+"""
+
+-- TODO: Retrieve events that occurred in the first half of the match
+SELECT event_id, minute
+FROM MatchEvents
+WHERE minute BETWEEN 1 AND 45;
+
+"""
++----------+--------+
+| event_id | minute |
++----------+--------+
+|        2 | 34     |
+|        8 | 42     |
+|       11 | 36     |
+|       14 | 11     |
+|       15 | 28     |
+|       18 | 45     |
+|       19 | 29     |
+|       20 | 45     |
+|       21 | 39     |
+|       23 | 43     |
+|       25 | 34     |
+|       30 | 5      |
+"""

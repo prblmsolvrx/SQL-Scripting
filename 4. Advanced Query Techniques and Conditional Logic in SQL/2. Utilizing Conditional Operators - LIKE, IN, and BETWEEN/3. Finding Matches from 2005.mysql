@@ -1,0 +1,19 @@
+"""
+modify the query. We have been given a query that fetches all match
+IDs and dates. Your task is to change the query to fetch matches
+played in the year 2005 only.
+"""
+-- TODO: Fetch all matches played in 2005
+SELECT match_id, date
+FROM Matches
+WHERE YEAR(date) LIKE "2005%";
+
+"""
++----------+------------+
+| match_id | date       |
++----------+------------+
+|        1 | 2005-05-01 |
+|        2 | 2005-11-02 |
+|        3 | 2005-11-27 |
++----------+------------+
+"""

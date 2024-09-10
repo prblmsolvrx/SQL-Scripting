@@ -1,0 +1,27 @@
+"""
+retrieve from the Matches table all those matches that have a result of
+4:0 and are within a certain year range (YEAR(date) BETWEEN 2010 AND 2013).
+Replace the ______ placeholders in the given starter code with the correct
+field and conditions.
+"""
+
+-- TODO: Fetch all matches with a specific result within a certain year range
+SELECT *
+FROM Matches
+WHERE result = '4:0' AND YEAR(date) BETWEEN 2010 AND 2013;
+
+"""
++----------+-----------+----------------+-------------+------------+-------+---------+-------------+--------+
+| match_id | season_id | competition_id | matchday    | date       | venue | club_id | opponent_id | result |
++----------+-----------+----------------+-------------+------------+-------+---------+-------------+--------+
+|      100 |         6 |              1 | 18          | 2010-01-16 | H     |       1 |           2 | 4:0    |
+|      101 |         6 |              1 | 18          | 2010-01-16 | H     |       1 |           2 | 4:0    |
+|      110 |         6 |              2 | last 16     | 2010-03-17 | H     |       1 |           2 | 4:0    |
+|      111 |         6 |              2 | last 16     | 2010-03-17 | H     |       1 |           2 | 4:0    |
+|      126 |         6 |              1 | 38          | 2010-05-16 | H     |       1 |           2 | 4:0    |
+|      127 |         6 |              1 | 38          | 2010-05-16 | H     |       1 |           2 | 4:0    |
+|      128 |         7 |              4 | final       | 2010-08-21 | H     |       1 |           2 | 4:0    |
+|      129 |         7 |              4 | final       | 2010-08-21 | H     |       1 |           2 | 4:0    |
+|      130 |         7 |              4 | final       | 2010-08-21 | H     |       1 |           2 | 4:0    |
+|      204 |         8 |              1 | 13          | 2011-11-19 | H     |       1 |           2 | 4:0    |
+"""

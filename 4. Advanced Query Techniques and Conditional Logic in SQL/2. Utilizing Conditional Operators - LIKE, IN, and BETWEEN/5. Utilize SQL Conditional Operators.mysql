@@ -1,0 +1,39 @@
+"""
+ bridge the concepts of joining tables and filtering results using a
+ list of values. Your task is to write an SQL query that retrieves
+ the match ID, result, and event type from the Matches and MatchEvents
+ tables. Specifically, you need to select matches from competitions
+ with IDs 1 or 2 and events of type 'Left-footed shot'.
+ These match details and event types are stored in the Matches
+ and MatchEvents tables, respectively, connected by the match_id.
+"""
+
+-- TODO: Write an SQL query that joins the Matches and MatchEvents tables and filters for matches in competitions 1 or 2 with event type 'Left-footed shot'.
+
+SELECT 
+    m.match_id,
+    m.result,
+    me.event_type
+FROM 
+    Matches m
+JOIN 
+    MatchEvents me
+    ON m.match_id = me.match_id
+WHERE 
+    m.competition_id IN (1, 2)
+    AND me.event_type = 'Left-footed shot';
+
+"""
++----------+--------+------------------+
+| match_id | result | event_type       |
++----------+--------+------------------+
+|        1 | 2:0    | Left-footed shot |
+|        2 | 5:0    | Left-footed shot |
+|        3 | 4:1    | Left-footed shot |
+|        4 | 2:1    | Left-footed shot |
+|        5 | 2:0    | Left-footed shot |
+|        7 | 0:3    | Left-footed shot |
+|        9 | 5:1    | Left-footed shot |
+|       10 | 2:3    | Left-footed shot |
+
+"""

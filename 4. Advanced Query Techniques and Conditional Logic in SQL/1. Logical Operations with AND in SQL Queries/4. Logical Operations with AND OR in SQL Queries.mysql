@@ -1,0 +1,29 @@
+"""
+-- TODO: Find and fix the issue in the code
+SELECT MatchEvents.*
+FROM MatchEvents
+JOIN Matches ON Matches.match_id = MatchEvents.match_id
+WHERE Matches.date > '2010-01-01' OR MatchEvents.minute < 30;
+"""
+
+-- TODO: Find and fix the issue in the code
+SELECT MatchEvents.*
+FROM MatchEvents
+JOIN Matches ON Matches.match_id = MatchEvents.match_id
+WHERE Matches.date > '2010-01-01' OR MatchEvents.minute < 30;
+
+"""
++----------+----------+------------------+--------+----------+------------------------+----------------+
+| event_id | match_id | playing_position | minute | at_score | event_type             | goal_assist_id |
++----------+----------+------------------+--------+----------+------------------------+----------------+
+|       14 |       14 | RW               | 11     | 1:1      | Left-footed shot       |              2 |
+|       15 |       15 | RW               | 28     | 2:2      | Left-footed shot       |           NULL |
+|       19 |       19 | RW               | 29     | 2:0      | Solo run               |              8 |
+|       30 |       30 | RW               | 5      | 1:0      | Left-footed shot       |             11 |
+|       31 |       31 | RW               | 10     | 2:1      | Left-footed shot       |              7 |
+|       34 |       34 | RW               | 19     | 2:0      | Left-footed shot       |              1 |
+|       39 |       39 | RW               | 18     | 1:1      | Left-footed shot       |              7 |
+|       42 |       42 | RW               | 5      | 1:0      | Penalty                |           NULL |
+|       49 |       49 | RW               | 8      | 3:0      | Direct free kick       |           NULL |
+|       50 |       50 | CF               | 4      | 0:1      | Left-footed shot       |             13 |
+"""

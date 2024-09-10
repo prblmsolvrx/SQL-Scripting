@@ -1,0 +1,26 @@
+"""
+put all that you've learned into practice with this final task of the section.
+Your task is to write an SQL query from scratch to fetch and display the names
+of matches (match_id) along with their minute (minute) and event type
+(event_type). However, the query should only return matches where at least
+one event occurred later than the average minute of all events.
+"""
+
+-- TODO: Write an SQL query to select all matches where at least one event occurred later than the average minute of all events.
+
+SELECT me.match_id, me.minute, me.event_type
+FROM MatchEvents me
+INNER JOIN Matches m ON me.match_id = m.match_id
+WHERE me.minute > (SELECT AVG(minute) FROM MatchEvents);
+
+"""
++----------+--------+------------------------+
+| match_id | minute | event_type             |
++----------+--------+------------------------+
+|        1 | 90+1   | Left-footed shot       |
+|        5 | 82     | Left-footed shot       |
+|        6 | 75     | Right-footed shot      |
+|        7 | 83     | Left-footed shot       |
+|        9 | 84     | Left-footed shot       |
+|       10 | 59     | Left-footed shot       |
+"""

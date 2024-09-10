@@ -1,0 +1,38 @@
+"""
+ the SQL query is designed to categorize match events based on
+ the minute they occurred into 'Early', 'Mid', and 'Late' categories.
+ However, there seems to be a bug in the query that is causing it to 
+ malfunction. Your task is to spot the issues and make the necessary corrections.
+ Keep in mind there could be more than one issue.
+"""
+
+-- TODO: Categorize match events based on the minute they occurred
+-- TODO: Categorize match events based on the minute they occurred
+SELECT
+    m.match_id AS MatchID,
+    me.minute AS Minute,
+    CASE
+        WHEN me.minute < 30 THEN 'Early'
+        WHEN me.minute BETWEEN 30 AND 60 THEN 'Mid'
+        ELSE 'Late'
+    END AS EventTimeCategory
+FROM
+    MatchEvents me
+JOIN
+    Matches m ON me.match_id = m.match_id;
+
+"""
++---------+--------+-------------------+
+| MatchID | Minute | EventTimeCategory |
++---------+--------+-------------------+
+|       1 | 90+1   | Late              |
+|       2 | 34     | Mid               |
+|       3 | 51     | Mid               |
+|       4 | 50     | Mid               |
+|       5 | 82     | Late              |
+|       6 | 75     | Late              |
+|       7 | 83     | Late              |
+|       8 | 42     | Mid               |
+|       9 | 84     | Late              |
+|      10 | 59     | Mid               |
+"""

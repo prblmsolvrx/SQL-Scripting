@@ -1,0 +1,25 @@
+"""
+ you're tasked with crafting an accurate SQL query to extract
+ information about matches played in the year 2005.
+ The goal is to retrieve both the match ID and the date
+ of each match, but there appears to be a hitch in executing
+ the intended query. Your mission is to identify the glitch
+ and reformulate the SQL statement to achieve the desired outcome.
+"""
+
+-- Retrieve match IDs and dates for matches played in 2005
+SELECT 
+    match_id,
+    date
+FROM Matches
+WHERE date LIKE '2005%';
+
+"""
++----------+------------+
+| match_id | date       |
++----------+------------+
+|        1 | 2005-05-01 |
+|        2 | 2005-11-02 |
+|        3 | 2005-11-27 |
++----------+------------+
+"""

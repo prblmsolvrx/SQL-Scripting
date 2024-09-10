@@ -1,0 +1,31 @@
+"""
+retrieve the event_id and minute columns, from the MatchEvents table
+where matches occurred after January 1st, 2015.
+You will need to incorporate the AND operator to ensure that not
+only did the matches occur after this date but also that the
+event happened in the second half of the game, after the 45th minute.
+"""
+
+SELECT me.event_id, me.minute
+FROM MatchEvents me
+JOIN Matches m ON me.match_id = m.match_id
+WHERE m.date > '2015-01-01'
+AND me.minute > 45;
+
+"""
++----------+--------+
+| event_id | minute |
++----------+--------+
+|      379 | 87     |
+|      382 | 62     |
+|      383 | 85     |
+|      384 | 55     |
+|      385 | 88     |
+|      386 | 55     |
+|      390 | 59     |
+|      391 | 65     |
+|      392 | 70     |
+|      393 | 56     |
+|      394 | 63     |
+|      395 | 68     |
+"""

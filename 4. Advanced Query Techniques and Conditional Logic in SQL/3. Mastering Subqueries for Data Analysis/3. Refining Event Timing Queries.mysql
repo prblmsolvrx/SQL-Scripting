@@ -1,0 +1,43 @@
+"""
+ change the query to retrieve not just matches where the
+ event occurred later than the average minute but also
+ matches where the event was a 'Left-footed shot'.
+ Complete the code to achieve this.
+"""
+
+SELECT 
+    m.match_id AS MatchID, 
+    me.minute AS Minute, 
+    me.event_type AS EventType
+FROM 
+    Matches m
+INNER JOIN 
+    MatchEvents me ON m.match_id = me.match_id
+WHERE 
+    me.minute > (
+        SELECT 
+            AVG(minute)
+        FROM 
+            MatchEvents
+    )
+AND
+    me.event_type = 'Left-footed shot'
+ORDER BY 
+    m.match_id DESC,
+    me.minute DESC;
+
+"""
++---------+--------+------------------+
+| MatchID | Minute | EventType        |
++---------+--------+------------------+
+|     701 | 58     | Left-footed shot |
+|     700 | 72     | Left-footed shot |
+|     698 | 55     | Left-footed shot |
+|     695 | 78     | Left-footed shot |
+|     689 | 86     | Left-footed shot |
+|     688 | 80     | Left-footed shot |
+|     686 | 86     | Left-footed shot |
+|     685 | 80     | Left-footed shot |
+|     681 | 68     | Left-footed shot |
+|     680 | 73     | Left-footed shot |
+"""

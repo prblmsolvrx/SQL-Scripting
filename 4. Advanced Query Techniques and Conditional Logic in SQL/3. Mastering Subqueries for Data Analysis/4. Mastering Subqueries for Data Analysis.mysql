@@ -1,0 +1,37 @@
+"""
+ we are continuing to explore the same query.
+ Your assignment is to correct the SQL code,
+ which aims to retrieve all matches where the event
+ occurred later than the average minute of all events.
+ However, the provided SQL code is malfunctioning.
+ Your task is to identify the bugs and fix the code 
+ to achieve the desired output.
+"""
+
+SELECT 
+    m.match_id AS MatchID, 
+    me.minute AS Minute, 
+    me.event_type AS EventType
+FROM 
+    Matches m
+INNER JOIN 
+    MatchEvents me ON m.match_id = me.match_id
+WHERE 
+    me.minute > (
+        SELECT 
+            AVG(minute) 
+        FROM 
+            MatchEvents
+    );
+
+"""
++---------+--------+------------------------+
+| MatchID | Minute | EventType              |
++---------+--------+------------------------+
+|       1 | 90+1   | Left-footed shot       |
+|       5 | 82     | Left-footed shot       |
+|       6 | 75     | Right-footed shot      |
+|       7 | 83     | Left-footed shot       |
+|       9 | 84     | Left-footed shot       |
+|      10 | 59     | Left-footed shot       |
+"""
